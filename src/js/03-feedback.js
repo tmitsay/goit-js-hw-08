@@ -22,6 +22,10 @@ function onClickInput(event) {
 function onSubmitForm(event) {
   event.preventDefault();
 
+  if (email.value.trim() === '' || message.value.trim() === '') {
+    return alert('Please! Fill in all fields of the form');
+  }
+
   console.log({ email: email.value, message: message.value });
 
   event.currentTarget.reset();
@@ -29,6 +33,8 @@ function onSubmitForm(event) {
 }
 
 function filledOutForm() {
+  const saveMessage = JSON.parse(localStorage.getItem(CURRENT_VALUE_FORM));
+
   if (formData) {
     email.value = formData.value || '';
     message.value = formData.value || '';
