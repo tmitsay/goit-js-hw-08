@@ -35,7 +35,7 @@ function onSubmitForm(event) {
 function filledOutForm() {
   const saveMessage = JSON.parse(localStorage.getItem(CURRENT_VALUE_FORM));
 
-  if (formData) {
+  if (saveMessage) {
     email.value = formData.value || '';
     message.value = formData.value || '';
   }
